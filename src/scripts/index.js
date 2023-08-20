@@ -1,18 +1,9 @@
-<<<<<<< HEAD
 import { getUser } from "./services/user";
 import { getRepositories } from "./services/repositories";
 import { getEvents } from "./services/events";
 
 import { user } from "./objects/user"
 import { screen } from "./objects/screen";
-=======
-import { getUser } from "./services/user.js";
-import { getRepositories } from "./services/repositories.js ";
-import { getEvents } from "./services/events.js";
-
-import { user } from "./objects/user.js"
-import { screen } from "./objects/screen.js";
->>>>>>> 3d39bdd2f2ef8e527d34333c1312548947850091
 
 document.getElementById('btn-search').addEventListener('click', () => {
     const userName = document.getElementById('input-search').value

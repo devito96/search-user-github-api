@@ -2,23 +2,26 @@ const screen = {
     userProfile: document.querySelector('.profile-data'),
     renderUser(user) {
         this.userProfile.innerHTML = `<div class="info">
-                            <img src="${user.avatarUrl}" alt="Foto do perfil do usuário" />
-                            <div class="data">
-                                <h1>${user.name ?? 'Não possui nome cadastrado 😢'}</h1>
-                                <p>${user.bio ?? 'Não possui bio cadastrada 😢'}</p>
-                                <p>${user.followers} Seguidores</p>
-                                <p>${user.following} Seguindo</p>
-                            </div>
-                        </div>`
+                                        <img src="${user.avatarUrl}" alt="Foto do perfil do usuário" />
+                                        <div class="data">
+                                            <h1>${user.name ?? 'Não possui nome cadastrado 😢'}</h1>
+                                            <p>${user.bio ?? 'Não possui bio cadastrada 😢'}</p>
+                                            <p>${user.followers} Seguidores</p>
+                                            <p>${user.following} Seguindo</p>
+                                        </div>
+                                    </div>`
 
         let repositoriesItens = ''
-        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.url}" target="_blank">${repo.name}
-                                                                    <ul class="infos-repo">
-                                                                        <li>🍴 ${repo.forks_count}</li>
-                                                                        <li>⭐ ${repo.stargazers_count}</li>
-                                                                        <li>👀 ${repo.watchers}</li>
-                                                                        <li>👨‍💻 ${repo.language ?? 'Nenhuma linguagem'}</li>
-                                                                    </ul></a></li>`);
+        user.repositories.forEach(repo => repositoriesItens += `<li>
+                                                                    <a href="${repo.url}" target="_blank">${repo.name}
+                                                                        <ul class="infos-repo">
+                                                                            <li>🍴 ${repo.forks_count}</li>
+                                                                            <li>⭐ ${repo.stargazers_count}</li>
+                                                                            <li>👀 ${repo.watchers}</li>
+                                                                            <li>👨‍💻 ${repo.language ?? 'Nenhuma linguagem'}</li>
+                                                                        </ul>
+                                                                    </a>
+                                                                </li>`);
 
         let eventsItens = ''
         user.events.forEach(event => {
